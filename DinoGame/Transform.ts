@@ -20,9 +20,6 @@
         if (typeof value === "number") {
             this.scale.Multiply(value);
         }
-
-            
-   
     }
     
 

@@ -7,6 +7,12 @@ var Canvas = (function () {
         this.canvas.height = height;
         this.canvasContext = this.canvas.getContext("2d");
     };
+    Canvas.getWidth = function () {
+        return this.canvas.width;
+    };
+    Canvas.getHeight = function () {
+        return this.canvas.height;
+    };
     Canvas.clearCanvas = function () {
         this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
     };

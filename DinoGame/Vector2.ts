@@ -62,6 +62,6 @@ let vec1: Vector2 = new Vector2(5, 6);
 console.log(vec1.toString());
 
 
-vec1.set(30, 20);
+vec1.Set(30, 20);
 
 console.log(vec1.toString());

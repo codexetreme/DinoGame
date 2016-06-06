@@ -24,12 +24,15 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <None Include="Resources\dinoImage.png" />
+    <None Include="Resources\treeImage.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="AxisManager.ts" />
     <TypeScriptCompile Include="canvasFunctionality.ts" />
-    <TypeScriptCompile Include="GameLoop.ts" />
+    <TypeScriptCompile Include="GameLoopComponents.ts" />
     <TypeScriptCompile Include="GameObject.ts" />
     <TypeScriptCompile Include="Resources.ts" />
     <TypeScriptCompile Include="Transform.ts" />
@@ -42,6 +45,12 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

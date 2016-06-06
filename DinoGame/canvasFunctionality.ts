@@ -10,7 +10,14 @@
         this.canvasContext = this.canvas.getContext("2d");
 
     }
+    static getWidth(): number {
+        return this.canvas.width;
+    }
 
+
+    static getHeight(): number {
+        return this.canvas.height;
+    }
     static clearCanvas() {
         this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }

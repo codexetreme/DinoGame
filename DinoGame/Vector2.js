@@ -46,6 +46,6 @@ var Vector2 = (function () {
 console.log(Vector2.up.toString());
 var vec1 = new Vector2(5, 6);
 console.log(vec1.toString());
-vec1.set(30, 20);
+vec1.Set(30, 20);
 console.log(vec1.toString());
 //# sourceMappingURL=Vector2.js.map
