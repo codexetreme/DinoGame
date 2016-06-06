@@ -30,6 +30,8 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="canvasFunctionality.ts" />
     <TypeScriptCompile Include="GameLoop.ts" />
+    <TypeScriptCompile Include="GameObject.ts" />
+    <TypeScriptCompile Include="Resources.ts" />
     <TypeScriptCompile Include="Transform.ts" />
     <TypeScriptCompile Include="Vector2.ts" />
   </ItemGroup>

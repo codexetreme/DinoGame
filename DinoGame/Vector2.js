@@ -9,9 +9,14 @@ var Vector2 = (function () {
         sumVector.y = vec1.y + vec2.y;
         return sumVector;
     };
-    Vector2.prototype.set = function (x, y) {
+    Vector2.prototype.Set = function (x, y) {
         this.x = x;
         this.y = y;
+    };
+    Vector2.Distance = function (vec1, vec2) {
+        var dist = Math.pow(vec1.x, 2) + Math.pow(vec1.y, 2) + Math.pow(vec2.x, 2) + Math.pow(vec2.y, 2);
+        dist = Math.sqrt(dist);
+        return dist;
     };
     Vector2.prototype.Multiply = function (value) {
         var resultVector = Vector2.identity;
@@ -28,6 +33,9 @@ var Vector2 = (function () {
     };
     Vector2.prototype.toString = function () {
         return this.x.toString() + " , " + this.y.toString();
+    };
+    Vector2.Lerp = function (vec1, vec2, time) {
+        return Vector2.Add(vec1.Multiply(time), vec2.Multiply(1.0 - time));
     };
     Vector2.up = new Vector2(0, 1);
     Vector2.forward = new Vector2(1, 0);

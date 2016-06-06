@@ -22,10 +22,18 @@
         return sumVector;
 
     }
-    set(x: number, y: number) {
+    Set(x: number, y: number) {
         this.x = x;
         this.y = y;
     }
+
+    static Distance(vec1: Vector2, vec2: Vector2) {
+        let dist: number = Math.pow(vec1.x, 2) + Math.pow(vec1.y, 2) + Math.pow(vec2.x, 2) + Math.pow(vec2.y, 2);
+        dist = Math.sqrt(dist);
+
+        return dist;
+    }
+
     Multiply(value: number) {
 
         let resultVector = Vector2.identity;
@@ -44,7 +52,9 @@
         return this.x.toString() + " , " + this.y.toString();
     }
 
-
+    static Lerp(vec1: Vector2, vec2: Vector2, time: number) {
+        return Vector2.Add( vec1.Multiply(time), vec2.Multiply(1.0- time));
+    }
 }
 console.log(Vector2.up.toString());
 let vec1: Vector2 = new Vector2(5, 6);
