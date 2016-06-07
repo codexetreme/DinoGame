@@ -1,31 +1,30 @@
-var Canvas = (function () {
-    function Canvas() {
-    }
-    Canvas.loadCanvas = function (DOMCanvasElement, width, height) {
-        this.canvas = DOMCanvasElement;
+class Canvas {
+    static loadCanvas(width, height) {
+        this.canvas = document.createElement("canvas");
         this.canvas.width = width;
         this.canvas.height = height;
+        this.canvas.id = "gameCanvas";
+        document.body.appendChild(this.canvas);
         this.canvasContext = this.canvas.getContext("2d");
-    };
-    Canvas.getWidth = function () {
+    }
+    static getWidth() {
         return this.canvas.width;
-    };
-    Canvas.getHeight = function () {
+    }
+    static getHeight() {
         return this.canvas.height;
-    };
-    Canvas.clearCanvas = function () {
+    }
+    static clearCanvas() {
         this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    };
-    Canvas.updateScoreUI = function (score, font, color, position, offsetPosition) {
+    }
+    static updateScoreUI(score, font, color, position, offsetPosition) {
         this.canvasContext.font = "30px" + " " + font;
         this.canvasContext.strokeStyle = color;
         this.canvasContext.strokeText("Score : " + score, position.x + offsetPosition.x, position.y + offsetPosition.y);
-    };
-    Canvas.drawAsset = function (type, source, position) {
+    }
+    static drawAsset(type, source, position) {
         if (type == "image") {
             this.canvasContext.drawImage(source, position.x, position.y);
         }
-    };
-    return Canvas;
-}());
+    }
+}
 //# sourceMappingURL=canvasFunctionality.js.map

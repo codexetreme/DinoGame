@@ -2,11 +2,13 @@
 
     private static canvas: HTMLCanvasElement;
     private static canvasContext: CanvasRenderingContext2D;
-
-    static loadCanvas(DOMCanvasElement: HTMLCanvasElement, width: number, height: number) {
-        this.canvas = DOMCanvasElement;
+    static loadCanvas(width: number, height: number) {
+        this.canvas = document.createElement("canvas");
         this.canvas.width = width;
         this.canvas.height = height;
+        this.canvas.id = "gameCanvas";
+        document.body.appendChild(this.canvas);
+        
         this.canvasContext = this.canvas.getContext("2d");
 
     }

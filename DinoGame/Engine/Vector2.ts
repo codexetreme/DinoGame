@@ -15,26 +15,22 @@
 
 
 
-    static Add(vec1: Vector2, vec2: Vector2) {
-        let sumVector: Vector2 = Vector2.zero;
-        sumVector.x = vec1.x + vec2.x;
-        sumVector.y = vec1.y + vec2.y;
-        return sumVector;
-
+    static Add(vec1: Vector2, vec2: Vector2): Vector2 {
+        return new Vector2(vec1.x + vec2.x, vec1.y + vec2.y);
     }
     Set(x: number, y: number) {
         this.x = x;
         this.y = y;
     }
 
-    static Distance(vec1: Vector2, vec2: Vector2) {
+    static Distance(vec1: Vector2, vec2: Vector2): number {
         let dist: number = Math.pow(vec1.x, 2) + Math.pow(vec1.y, 2) + Math.pow(vec2.x, 2) + Math.pow(vec2.y, 2);
         dist = Math.sqrt(dist);
 
         return dist;
     }
 
-    Multiply(value: number) {
+    Multiply(value: number): Vector2 {
 
         let resultVector = Vector2.identity;
         resultVector.x *= value;
@@ -42,7 +38,7 @@
         return resultVector;
         
     };
-    equals(otherVector: Vector2) {
+    equals(otherVector: Vector2): boolean {
         if (this.x == otherVector.x && this.y == otherVector.y)
             return true;
         else return false;
@@ -56,12 +52,4 @@
         return Vector2.Add( vec1.Multiply(time), vec2.Multiply(1.0- time));
     }
 }
-console.log(Vector2.up.toString());
-let vec1: Vector2 = new Vector2(5, 6);
 
-console.log(vec1.toString());
-
-
-vec1.Set(30, 20);
-
-console.log(vec1.toString());

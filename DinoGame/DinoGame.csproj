@@ -26,17 +26,20 @@
     <Content Include="index.html" />
     <None Include="Resources\dinoImage.png" />
     <None Include="Resources\treeImage.png" />
+    <Content Include="master.css" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="AxisManager.ts" />
-    <TypeScriptCompile Include="canvasFunctionality.ts" />
-    <TypeScriptCompile Include="GameLoopComponents.ts" />
-    <TypeScriptCompile Include="GameObject.ts" />
-    <TypeScriptCompile Include="Resources.ts" />
-    <TypeScriptCompile Include="Transform.ts" />
-    <TypeScriptCompile Include="Vector2.ts" />
+    <TypeScriptCompile Include="Engine\AxisManager.ts" />
+    <TypeScriptCompile Include="Engine\canvasFunctionality.ts" />
+    <TypeScriptCompile Include="Engine\GameLoopComponents.ts" />
+    <TypeScriptCompile Include="Engine\GameObject.ts" />
+    <TypeScriptCompile Include="Engine\Resources.ts" />
+    <TypeScriptCompile Include="Engine\RigidBody.ts" />
+    <TypeScriptCompile Include="Engine\RunGame.ts" />
+    <TypeScriptCompile Include="Engine\Transform.ts" />
+    <TypeScriptCompile Include="Engine\Vector2.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -81,6 +84,17 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind />
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

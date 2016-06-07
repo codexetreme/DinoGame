@@ -7,8 +7,12 @@
     // colors
     ScoreTextColor: string = "#40d291";
     ScoreFont: string = "Comic Sans MS";
-    GameObjects: Array<GameObject>;
+    GameObjects: Array<GameObject> = new Array();
+    Rigidbodies: Array<Rigidbody> = new Array();
     keysDown: boolean[];
+
+    jumpKey: boolean = false;
+
 
     static getInstance() {
 

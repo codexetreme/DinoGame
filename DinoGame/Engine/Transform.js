@@ -1,19 +1,18 @@
-var Transform = (function () {
-    function Transform() {
+class Transform {
+    constructor() {
         this.position = Vector2.zero;
         this.scale = Vector2.identity;
     }
-    Transform.prototype.Translate = function (directionVector) {
+    Translate(directionVector) {
         this.position = Vector2.Add(this.position, directionVector);
-    };
-    Transform.prototype.SetScale = function (value) {
+    }
+    SetScale(value) {
         if (value instanceof Vector2) {
             this.scale = value;
         }
         if (typeof value === "number") {
             this.scale.Multiply(value);
         }
-    };
-    return Transform;
-}());
+    }
+}
 //# sourceMappingURL=Transform.js.map
