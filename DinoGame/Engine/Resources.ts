@@ -12,7 +12,7 @@
     keysDown: boolean[];
 
     jumpKey: boolean = false;
-
+    pauseKey: boolean = false;
 
     static getInstance() {
 

@@ -26,5 +26,8 @@ class Canvas {
             this.canvasContext.drawImage(source, position.x, position.y);
         }
     }
+    static writeToCanvas(message, position) {
+        this.canvasContext.fillText(message, position.x, position.y);
+    }
 }
 //# sourceMappingURL=canvasFunctionality.js.map

@@ -22,6 +22,7 @@ class GameLoopComponents {
         this.Start();
         this.drawGame();
         this.fixedUpdate();
+        //this.garbageCollection();
     }
     fixedUpdate() {
         setInterval(() => {
@@ -29,6 +30,16 @@ class GameLoopComponents {
                 gameResources.getInstance().Rigidbodies[i].updateRigidbody();
             }
         }, 20);
+    }
+    garbageCollection() {
+        setInterval(() => {
+            for (var i = 0; i < gameResources.getInstance().GameObjects.length; i++) {
+                let go = gameResources.getInstance().GameObjects[i];
+                if (go.transform.position.x < Canvas.getWidth() || go.transform.position.y > Canvas.getHeight()) {
+                    delete gameResources.getInstance().GameObjects[i];
+                }
+            }
+        }, 2000);
     }
     // override this function and implement your own logic
     Update() {

@@ -2,7 +2,11 @@ window.addEventListener("keydown", function (e) {
     if (e.keyCode == 32) {
         e.preventDefault();
         gameResources.getInstance().jumpKey = true;
-        console.log(gameResources.getInstance().jumpKey);
+    }
+    if (e.keyCode == 27) {
+        e.preventDefault();
+        gameResources.getInstance().pauseKey = !gameResources.getInstance().pauseKey;
+        console.log(gameResources.getInstance().pauseKey);
     }
 }, false);
 window.addEventListener("keyup", function (e) {

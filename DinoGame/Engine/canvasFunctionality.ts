@@ -16,7 +16,7 @@
         return this.canvas.width;
     }
 
-
+    
     static getHeight(): number {
         return this.canvas.height;
     }
@@ -34,5 +34,9 @@
         if (type == "image") {
             this.canvasContext.drawImage(source, position.x, position.y);
         }
+        
+    }
+    static writeToCanvas(message: string, position: Vector2) {
+        this.canvasContext.fillText(message, position.x, position.y);
     }
 }

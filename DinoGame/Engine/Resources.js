@@ -8,6 +8,7 @@ class gameResources {
         this.GameObjects = new Array();
         this.Rigidbodies = new Array();
         this.jumpKey = false;
+        this.pauseKey = false;
     }
     static getInstance() {
         return this.mInstance;
