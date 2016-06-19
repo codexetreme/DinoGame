@@ -22,7 +22,7 @@ class RunGame extends GameLoopComponents {
         this.dino = new GameObject("Dino", new Vector2(50, Canvas.getHeight() - this.dinoHeight), true, gameResources.getInstance().DinoImagePath);
         this.dinoTransform = this.dino.transform;
         this.dino.rigidbody.setGravity(Vector2.zero);
-        Canvas.updateScoreUI("0", gameResources.getInstance().ScoreFont, gameResources.getInstance().ScoreTextColor, new Vector2(Canvas.getWidth(), 30), new Vector2(-200, 0));
+        Canvas.updateScoreUI(0, gameResources.getInstance().ScoreFont, gameResources.getInstance().ScoreTextColor, new Vector2(Canvas.getWidth(), 30), new Vector2(-200, 0));
         setInterval(() => { this.makeTree(); }, 2000);
         this.makeTree();
     }
@@ -39,7 +39,7 @@ class RunGame extends GameLoopComponents {
         if (!gameResources.getInstance().pauseKey)
             this.dinoJump();
         else
-            Canvas.updateScoreUI("Game Paused", "Arial", "#000000", new Vector2(Canvas.getWidth() / 2, Canvas.getHeight() / 2), Vector2.zero);
+            Canvas.writeToCanvas("Game Paused", new Vector2(Canvas.getWidth() / 2, Canvas.getHeight() / 2));
         //clamps it to bottom
         if (this.dinoTransform.position.y >= Canvas.getHeight() - 91) {
             this.dinoTransform.position.y = Canvas.getHeight() - 91;
@@ -47,7 +47,7 @@ class RunGame extends GameLoopComponents {
         }
         else
             this.grounded = false;
-        Canvas.updateScoreUI("0", gameResources.getInstance().ScoreFont, gameResources.getInstance().ScoreTextColor, new Vector2(Canvas.getWidth(), 30), new Vector2(-200, 0));
+        Canvas.updateScoreUI(0, gameResources.getInstance().ScoreFont, gameResources.getInstance().ScoreTextColor, new Vector2(Canvas.getWidth(), 30), new Vector2(-200, 0));
     }
 }
 let g = new RunGame();

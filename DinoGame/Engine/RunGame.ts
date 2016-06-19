@@ -14,15 +14,7 @@
 
     nameCounter: number = 1;
     name: string = "tree ";
-    makeTree() {
-        let spawnVector: Vector2 = new Vector2(Canvas.getWidth() + Math.random() * 1000, Canvas.getHeight() - this.treeHeight);
-        let tree: GameObject = new GameObject(this.name + this.nameCounter.toString(), spawnVector, true, gameResources.getInstance().TreeImagePath);
-        let treeVelocity: Vector2 = new Vector2(-5, 0);
-        tree.rigidbody.setGravity(Vector2.zero);
-        tree.rigidbody.setVelocity(treeVelocity);
-        this.nameCounter++;
-    }
-
+   
 
 
     
@@ -62,7 +54,7 @@
         if (!gameResources.getInstance().pauseKey)
             this.dinoJump();
         else
-            Canvas.updateScoreUI("Game Paused", "Arial", "#000000", new Vector2(Canvas.getWidth() / 2, Canvas.getHeight() / 2), Vector2.zero);
+            Canvas.writeToCanvas("Game Paused",new Vector2(Canvas.getWidth() / 2, Canvas.getHeight() / 2));
         //clamps it to bottom
         if (this.dinoTransform.position.y >= Canvas.getHeight() - 91) {
 
